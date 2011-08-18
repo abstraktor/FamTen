@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -6,36 +6,59 @@
 		</title>
 		<link type="text/css" href="stylesheets/reset.css" media="screen" rel="stylesheet"></link>
 		<link type="text/css" href="stylesheets/layout.css" media="screen" rel="stylesheet"></link>
-		<script type="text/javascript" src="lib/json2.js">
-</script>
-		<script type="text/javascript" src="lib/jquery.min.js">
-</script>
-		<script type="text/javascript" src="lib/underscore.js">
-</script>
-		<script type="text/javascript" src="lib/backbone.js">
-</script>
-		<script type="text/javascript" src="javascripts/init.js">
-</script>
-		<script type="text/javascript" src="javascripts/models/player.js">
-</script>
-		<script type="text/javascript" src="javascripts/models/match.js">
-</script>
-		<script type="text/javascript" src="javascripts/views/table.js">
-</script>
-		<script type="text/javascript" src="javascripts/views/match.js">
-</script>
-		<script type="text/template" src="javascripts/templates/match.jst" id="match-template">
-</script>
+		<script type="text/javascript" src="lib/json2.js"></script>
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/underscore.js"></script>
+		<script type="text/javascript" src="lib/backbone.js"></script>
+		<script type="text/javascript" src="lib/backbone-localstorage.js"></script>
+		<script type="text/javascript" src="javascripts/init.js"></script>
+		<script type="text/javascript" src="javascripts/models/player.js"></script>
+		<script type="text/javascript" src="javascripts/models/match.js"></script>
+		<script type="text/javascript" src="javascripts/views/table.js"></script>
+		<script type="text/javascript" src="javascripts/views/match.js"></script>
+		<script type="text/javascript" src="javascripts/views/app.js"></script>
+		<script type="text/template" src="javascripts/templates/match.jst" id="match-template"></script>
+		<script type="text/template" src="javascripts/templates/table.jst" id="tableitem-template">
+			<tr>
+				<td>1</td>
+				<td><% name; %></td>
+				<td><%  %></td>
+				<td><%  %></td>
+				<td><%  %></td>
+			</tr>
+		</script>
+		<script type="text/template" id="tableitem-form-template">
+			<tr>
+				<td>+</td>
+				<td><input data-field="name" type="text" value="<% name; %>" class="player-form" /></td>
+				<td><%  %></td>
+				<td><input data-field="stats" type="text" value="<% stats; %>" class="player-form" /></td>
+				<td><%  %></td>
+			</tr>
+		</script>
 		<script type="text/template" src="javascripts/templates/table.jst" id="table-template">
-</script>
+			<table id="table">
+				<thead>
+					<td></td>
+					<td>Name</td>
+					<td>Spiele</td>
+					<td>Siege:Gleichstand:Verloren</td>
+					<td>Punkte</td>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</script>
+		<script type="text/templates" id="match-template">
+		</script>
 	</head>
 	<body>
 		<div id="site">
 			<h1>FamTen</h1>
 			<div class="menu">
 				<ul>
-					<li><a data-view="player">Spieler</a></li>
-					<li><a data-view="match">Matches</a></li>
+					<li><a data-view="Table">Spieler</a></li>
+					<li><a data-view="Match">Matches</a></li>
 				</ul>
 			</div>
 			<div id="content">

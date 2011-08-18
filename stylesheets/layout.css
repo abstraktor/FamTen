@@ -7,6 +7,12 @@ h1 {
 	text-align:center;
 }
 
+input {
+	background-color: #efd;
+	border: 1px #eee;
+	padding:3px;
+}
+
 #site {
 	display:block;
 	position:relative;
@@ -60,7 +66,7 @@ h1 {
 	box-shadow:inset 2px 0px 8px #cdb;
 }
 .menu a.active {
-	box-shadow:inset 2px 0px 8px #786;
+	box-shadow:inset 5px 0px 8px #564;
 }
 
 /*
