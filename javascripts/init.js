@@ -4,6 +4,8 @@ window.Collection = {};
 
 window.Views = {};
 
-//contains instances of window.Collection-items
-window.App = {};
-window.AppView = new Views.AppView;
+$(function() {
+    //contains instances of window.Collection-items
+    window.App = {};
+    window.AppView = new Views.App;
+});
