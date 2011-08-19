@@ -90,3 +90,19 @@ input {
 	background-color: #AE5;
 	cursor: pointer;
 }
+
+#table tr.viewing td.player-view {
+	display:table-cell;
+}
+
+#table tr.editing td.player-view {
+	display:none;
+}
+
+#table tr.viewing td.player-form {
+	display:none;
+}
+
+#table tr.editing td.player-form {
+	display:table-cell;
+}
