@@ -13,8 +13,9 @@ window.Model.Player = Backbone.Model.extend({
         },
 
     avgpointspergame: function() {
-        if (this.games() == 0)
-        return 0;
+        if (this.games() == 0) {
+            return 0;
+        }
         return this.points() / this.games();
     },
 
@@ -41,19 +42,19 @@ window.Model.Player = Backbone.Model.extend({
 
     parse: function(response) {
         var stats = response.attributes.stats.split(":");
-		
-		//parse given colon-seperated string of stats to integers
-		stats = stats.map(function(x) {
-        	return parseInt(x) || 0;
-    	});
-        
-		response.set({
-			wins: stats[0],
-			evens: stats[1],
-			loses: stats[2]
-		});
+
+        //parse given colon-seperated string of stats to integers
+        stats = stats.map(function(x) {
+            return parseInt(x) || 0;
+        });
+
+        response.set({
+            wins: stats[0],
+            evens: stats[1],
+            loses: stats[2]
+        });
         delete response.attributes.stats;
-		return response;
+        return response;
     },
 
     validate: function(attrs) {

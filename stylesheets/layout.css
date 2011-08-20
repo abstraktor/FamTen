@@ -7,6 +7,10 @@ h1 {
 	text-align:center;
 }
 
+h3 {
+	margin-top:25px;
+}
+
 input {
 	background-color: #ae5;
 	border: 1px solid #9d4;
@@ -113,4 +117,47 @@ input {
 
 #table tr.editing td.player-form {
 	display:table-cell;
+}
+
+/**
+*  Views.Match
+*/
+
+.match .player-input {
+	display: block;
+	position: absolute;
+	padding: 25px;
+	width: 100px;
+	margin: auto 0;
+}
+
+.match .player-input.left {
+	left:0;
+}
+
+	.match .player-input.right {
+		right:0;
+	}
+
+.match .match-input {
+	display: block;
+	position: absolute;
+	top: 35px;
+	left: 245px;
+	width: 30px;
+	font-size:18px;
+	padding:7px;
+	border-radius: 5px;
+}
+
+.match {
+	display:block;
+	position:relative;
+	margin: 15px;
+	background-color: #ae5;
+	border-radius: 15px;
+	/*box-shadow:inset 1px 0px 8px #fff;*/
+	box-shadow: 0px 0px 5px #ae5;
+	width: 550px;
+	height: 100px;
 }

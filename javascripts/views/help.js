@@ -1,9 +1,9 @@
 $(function(){
-	window.Views.Match =  Backbone.View.extend({
+	window.Views.Help =  Backbone.View.extend({
 		el: "#content",
 		
         // Cache the template function for a single item.
-        template: _.template($('#match-template').html()),
+        template: _.template($('#help-template').html()),
 
         // The DOM events specific to an item.
         events: {

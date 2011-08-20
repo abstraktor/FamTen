@@ -16,9 +16,9 @@
 		<script type="text/javascript" src="javascripts/models/match.js"></script>
 		<script type="text/javascript" src="javascripts/views/player.js"></script>
 		<script type="text/javascript" src="javascripts/views/table.js"></script>
+		<script type="text/javascript" src="javascripts/views/help.js"></script>
 		<script type="text/javascript" src="javascripts/views/match.js"></script>
 		<script type="text/javascript" src="javascripts/views/app.js"></script>
-		<script type="text/template" src="javascripts/templates/match.jst" id="match-template"></script>
 		<script type="text/template" src="javascripts/templates/table.jst" id="player-template">
 				<td class="player-view" data-field="position"></td>
 				<td class="player-view" data-field="name"></td>
@@ -45,6 +45,25 @@
 			</table>
 		</script>
 		<script type="text/templates" id="match-template">
+			<div class="match">
+				<div class="player-input left">Karl<br />Peter</div>
+				<input type="text" class="match-input" value="3:3"/>
+				<div class="player-input right">Dietmar<br />Edgar</div>
+			</div>
+			<div class="match">
+				<div class="player-input left">Karl<br />Peter</div>
+				<input type="text" class="match-input" value="3:3"/>
+				<div class="player-input right">Dietmar<br />Edgar</div>
+			</div>
+		</script>
+		<script type="text/templates" id="help-template">
+			<h3>Was ist das hier alles?</h3>
+			<p>FamTen ist die Webapp zur Unterst&uuml;tzung eures FAMilien TENnis-Tuniers. Ihr bekommt Begegnungen vorgeschlagen, k&ouml;nnt aber auch eigene zusammen stellen. Die Punktberechnung, Rangliste usw. erfolg automatisch.</p>
+			<h3>Wie mache ich das?</h3>
+			<p>Unter <i>Spieler</i> k&ouml;nnt ihr die Spielernamen eingeben und dann mit Enter erstellen. Wenn das f&uuml;r alle Mitspieler geschehen ist, wechselt zu den Begegnungen und stellt fest, dass noch nichts dergleichen implementiert ist.</p>
+			<h3>Und die Endrunde?</h3>
+			<p>Wenn ihr von der Vorrunde in die Endrunde wechseln wollt, so braucht ihr nur eine Tafel und ein St&uuml;ck Kreide</p>
+			
 		</script>
 	</head>
 	<body>
@@ -54,7 +73,7 @@
 				<ul>
 					<li><a data-view="Table">Spieler</a></li>
 					<li><a data-view="Match">Matches</a></li>
-					<li><a data-view="Match">Hilfe</a></li>
+					<li><a data-view="Help">Hilfe</a></li>
 				</ul>
 			</div>
 			<div id="content">
