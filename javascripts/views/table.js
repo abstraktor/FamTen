@@ -19,7 +19,6 @@ $(function() {
         },
 
         render: function() {
-			console.log("redraw...")
 			this.buildCreationRow();
 			$(this.el).empty();
             $(this.el).html(this.template(App.Players.toJSON()));

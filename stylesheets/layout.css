@@ -21,7 +21,7 @@ input {
 	width: 600px;
 	margin: 30px auto;
 	border-radius:9px;
-	background-color:#9c3;
+	background-color:#ad4;
 	padding: 20px;
 	box-shadow: 2px 2px 5px #674;
 }
@@ -36,6 +36,7 @@ input {
 	overflow-x: hidden;
 	overflow-y: auto;
 	margin-bottom:150px;
+	min-height:200px;
 }
 
 .menu {
@@ -59,18 +60,18 @@ input {
 	width:100%;
 	padding:20px;
 	cursor:pointer;
-	background-color: #dec;
+	background-color: #ae5;
 	border-radius: 15px 0 0 15px;
-	box-shadow:inset 5px 0px 8px #fff;
+	box-shadow:inset 1px 0px 8px #fff;
 	margin-right:10px;
 }
 
 .menu a:hover {
-	box-shadow:inset 0px 0px 5px #9c3;
+	box-shadow:inset 0px 0px 5px #ad4;
 }
 
 .menu a.active {
-	background-color: #9c3;
+	background-color: #ad4;
 	margin-left:10px;
 	margin-right:0;
 	box-shadow:none;
@@ -89,9 +90,8 @@ input {
 }
 
 #table tbody tr:hover {
-	background-color: #AE5;
 	cursor: pointer;
-	border-radius: 15px;
+	box-shadow: 0 0 7px #efd;
 }
 
 #table tbody tr.active {
