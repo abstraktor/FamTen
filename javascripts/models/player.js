@@ -10,41 +10,61 @@ window.Model.Player = Backbone.Model.extend({
 
     // Ensure that each player created has a name.
     initialize: function() {
-        if (!this.get("name")) {
-            this.set({
-                "name": this.defaults.name
-            });
-        }
+        },
+
+    avgpointspergame: function() {
+        if (this.games() == 0)
+        return 0;
+        return this.points() / this.games();
     },
 
     points: function() {
-        return (this.wins * 2) + this.evens;
+        return (this.get("wins") * 2) + this.get("evens");
     },
 
     stats: function() {
-        return this.wins + ":" + this.even + ":" + this.loses;
+        if (this.get("wins") === undefined) {
+            return "";
+        }
+        return this.get("wins") + ":" + this.get("evens") + ":" + this.get("loses");
     },
 
     games: function() {
-        return this.wins + this.evens + this.loses;
+        return this.get("wins") + this.get("evens") + this.get("loses");
+    },
+
+    position: function() {
+        if (!this.collection)
+        return "";
+        return this.collection.indexOf(this) + 1;
+    },
+
+    parse: function(response) {
+        var stats = response.attributes.stats.split(":");
+		
+		//parse given colon-seperated string of stats to integers
+		stats = stats.map(function(x) {
+        	return parseInt(x) || 0;
+    	});
+        
+		response.set({
+			wins: stats[0],
+			evens: stats[1],
+			loses: stats[2]
+		});
+        delete response.attributes.stats;
+		return response;
     },
 
     validate: function(attrs) {
         if (attrs) {
-            if (attrs.name == "")
+            if (attrs.name == "" || attrs.name == 'NaN')
             return "Spieler brauchen Namen";
-            if (App.Players.name_exists(attrs.name))
-            return "Diesen Spieler hast du schon hinzugefügt"
             if (attrs.stats !== undefined) {
                 var stats = attrs.stats.split(":");
-                if (!_.isArray(stats))
-                return "Stats should have the form wins:evens:loses replaced by that numbers";
-                //parse given colon-seperated string of stats to integers
-                [this.wins, this.evens, this.loses] = stats.map(function(x) {
-                    return parseInt(x);
-                });
+                if (!_.isArray(stats) || stats.length != 3)
+                return "Stats should have the form wins:evens:loses";
             }
-            delete attrs.stats;
         }
     }
 });
@@ -56,13 +76,13 @@ window.Collection.Players = Backbone.Collection.extend({
 
     name_exists: function(name) {
         return this.any(function(p) {
-            return p.attributes.name == name
+            return p.get("name") == name
         });
     },
 
-    // Todos are sorted by their original insertion order.
+    // order by average points per game *descending* (thats what the minus is for)
     comparator: function(player) {
-        return player.points();
+        return - player.avgpointspergame();
     }
 
 });

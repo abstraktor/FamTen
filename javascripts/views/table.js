@@ -11,14 +11,15 @@ $(function() {
         },
 
         initialize: function() {
-			App.Players.bind("add", this.addOne, this);
+			App.Players.bind("add", this.render, this);
+			App.Players.bind("changed", this.render, this);
 			App.Players.bind("remove", this.render, this);
             App.Players.fetch();
             this.render();
         },
 
         render: function() {
-			console.log("redraw");
+			console.log("redraw...")
 			this.buildCreationRow();
 			$(this.el).empty();
             $(this.el).html(this.template(App.Players.toJSON()));
@@ -40,7 +41,7 @@ $(function() {
 	    },
 
         buildCreationRow : function() {
-            var view = new Views.Player( {model: new Model.Player({index:"+"})} );
+            var view = new Views.Player( {model: new Model.Player({position:"+"})} );
 			view.startEditing();
 			view.close = function() {
 				if(App.Players.create(this.getContentFromForm()))

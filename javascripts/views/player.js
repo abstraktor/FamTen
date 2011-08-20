@@ -7,10 +7,10 @@ $(function() {
 
         // The DOM events specific to an item.
         events: {
-            "dblclick .player-view": "toggleEditing",
+            "dblclick .player-view": "startEditing",
             // "click span.player-destroy"   : "clear",
             "keypress .player-input": "updateOnEnter",
-            "blur .player-input": "callclose",
+          //  "blur .player-input": "callclose",
             "keyup .player-input": "showTooltip"
         },
 
@@ -32,11 +32,18 @@ $(function() {
         setContent: function(attrs) {
 			var self = this;
 			if(attrs===undefined)
-				var attrs = this.model.attributes;
+				var attrs = this.model;
 			
             this.$("*[data-field]").each(function(i, el) {
 				var field = $(el).data("field");
-				var val = attrs[field];
+				if (typeof self.model[field] === "function"){
+				 	val = self.model[field]();
+				}
+				else if (self.model.get(field) !== "undefined")	
+					val = self.model.get(field);
+				else
+					console.error("the field "+ field +" is not within that model");
+				
                 if (el.tagName == "INPUT") {
                     $(el).val(val);
                 } else {

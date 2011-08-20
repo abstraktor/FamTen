@@ -20,25 +20,25 @@
 		<script type="text/javascript" src="javascripts/views/app.js"></script>
 		<script type="text/template" src="javascripts/templates/match.jst" id="match-template"></script>
 		<script type="text/template" src="javascripts/templates/table.jst" id="player-template">
-				<td class="player-view" data-field="index"></td>
+				<td class="player-view" data-field="position"></td>
 				<td class="player-view" data-field="name"></td>
-				<td class="player-view" data-field="games"></td>
 				<td class="player-view" data-field="stats"></td>
 				<td class="player-view" data-field="points"></td>
+				<td class="player-view" data-field="games"></td>
 						<td class="player-form"></td>
-						<td class="player-form"><input data-field="name" type="text" value="<% name; %>" class="player-input" /></td>
-						<td class="player-form"><%  %></td>
-						<td class="player-form"><input data-field="stats" type="text" value="<%  %>" class="player-input" /></td>
-						<td class="player-form"><%  %></td>
+						<td class="player-form"><input data-field="name" type="text" class="player-input" /></td>
+						<td class="player-form"><input data-field="stats" type="text" class="player-input" /></td>
+						<td class="player-form"></td>
+						<td class="player-form"></td>
 		</script>
 		<script type="text/template" src="javascripts/templates/table.jst" id="table-template">
 			<table id="table">
 				<thead>
 					<td></td>
 					<td>Name</td>
-					<td>Spiele</td>
 					<td>Siege:Gleichstand:Verloren</td>
 					<td>Punkte</td>
+					<td>Spiele</td>
 				</thead>
 				<tbody>
 				</tbody>
@@ -54,6 +54,7 @@
 				<ul>
 					<li><a data-view="Table">Spieler</a></li>
 					<li><a data-view="Match">Matches</a></li>
+					<li><a data-view="Match">Hilfe</a></li>
 				</ul>
 			</div>
 			<div id="content">

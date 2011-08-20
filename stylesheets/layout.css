@@ -8,9 +8,11 @@ h1 {
 }
 
 input {
-	background-color: #efd;
-	border: 1px #eee;
+	background-color: #ae5;
+	border: 1px solid #9d4;
 	padding:3px;
+	font-size:15px;
+	width:100px;
 }
 
 #site {
@@ -21,7 +23,7 @@ input {
 	border-radius:9px;
 	background-color:#9c3;
 	padding: 20px;
-	box-shadow: 2px 2px 5px #9a7;
+	box-shadow: 2px 2px 5px #674;
 }
 
 #content {
@@ -39,7 +41,7 @@ input {
 .menu {
 	display:block;
 	position:absolute;
-	left:-150px;
+	left:-160px;
 	width:160px;
 }
 
@@ -59,14 +61,20 @@ input {
 	cursor:pointer;
 	background-color: #dec;
 	border-radius: 15px 0 0 15px;
-	box-shadow:inset 0px 0px 5px #9a7;
+	box-shadow:inset 5px 0px 8px #fff;
+	margin-right:10px;
 }
 
 .menu a:hover {
-	box-shadow:inset 2px 0px 8px #cdb;
+	box-shadow:inset 0px 0px 5px #9c3;
 }
+
 .menu a.active {
-	box-shadow:inset 5px 0px 8px #564;
+	background-color: #9c3;
+	margin-left:10px;
+	margin-right:0;
+	box-shadow:none;
+/*	box-shadow:inset 2px 0px 8px #cdb;*/
 }
 
 /*

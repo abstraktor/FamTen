@@ -16,6 +16,7 @@ $(function() {
             },
 
         switchView: function(self) {
+			console.log(self.currentTarget);
             $(".menu li a").removeClass("active");
             $(self.currentTarget).addClass("active");
             window.ContentView = new Views[$(self.currentTarget).data("view")]();
