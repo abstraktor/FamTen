@@ -7,28 +7,30 @@ window.Views = {};
 //contains instances of window.Collection-items
 window.App = {};
 
-var Workspace = Backbone.Router.extend({
+$(function(){
+	
+	var Workspace = Backbone.Router.extend({
 
-    routes: {
-        "help": "help",
-        "table": "table",
-        "matches": "matches"
-    },
+	    routes: {
+	        "help": "help",
+	        "table": "table",
+	        "matches": "matches"
+	    },
 
-    help: function() {
-		alert("help");
-        AppView.switchView($("a[data-view='Help']"));
-    },
+	    help: function() {
+	        window.AppView.switchView($("a[data-view='Help']"));
+	    },
 
-    table: function() {
-        AppView.switchView($("a[data-view='Table']"));
-    },
+	    table: function() {
+	        window.AppView.switchView($("a[data-view='Table']"));
+	    },
 
-    matches: function() {
-        AppView.switchView($("a[data-view='Match']"));
-    }
+	    matches: function() {
+	        window.AppView.switchView($("a[data-view='Match']"));
+	    }
 
+	});
 
+	new Workspace();
+	Backbone.history.start();
 });
-
-Backbone.history.start();

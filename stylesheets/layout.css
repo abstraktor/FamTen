@@ -123,21 +123,42 @@ input {
 *  Views.Match
 */
 
-.match .player-input {
+.match .player-input,
+.token-input-list {
 	display: block;
 	position: absolute;
-	padding: 25px;
+	padding: 5px;
 	width: 100px;
 	margin: auto 0;
+	top:15px;
 }
 
-.match .player-input.left {
-	left:0;
+.match .player-input.left,
+.token-input-list.left {
+	left:15px;
 }
 
-	.match .player-input.right {
-		right:0;
-	}
+.match .player-input.right,
+.token-input-list.right {
+	right:15px;
+}
+
+.token-input-dropdown,
+.token-input-input-token input {
+	width:100px!important;
+}
+
+.token-input-dropdown,
+.token-input-input-token {
+	display:none!important;
+}
+
+.editing .token-input-dropdown,
+.editing .token-input-input-token {
+	display:block!important;
+}
+
+
 
 .match .match-input {
 	display: block;
@@ -157,7 +178,12 @@ input {
 	background-color: #ae5;
 	border-radius: 15px;
 	/*box-shadow:inset 1px 0px 8px #fff;*/
-	box-shadow: 0px 0px 5px #ae5;
+	box-shadow: 0px 0px 5px #999;
 	width: 550px;
 	height: 100px;
+}
+
+.creationRow .match {
+	box-shadow: 0px 0px 5px #ae5;
+	background-color:#ad4;
 }
